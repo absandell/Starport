@@ -1,6 +1,6 @@
 <template>
     <div class = "taskblock">
-        <div class = "tasklist" :key="task.id" v-for="task in tasks">
+        <div class = "tasklist" :key="task.id" v-for="task in computedObj">
             <div class = "outer">
                 <Task class = "taskitem" @toggle-reminder="$emit('toggle-reminder', task.id)" @delete-task="$emit('delete-task', task.id)" :task="task"/>
             </div>        
@@ -13,6 +13,16 @@
 
     export default{
         name: 'Tasks',
+        data(){
+            return {
+                limit: 5
+            }
+        },
+        computed: {
+            computedObj(){
+                return this.limit ? this.tasks.slice(0, this.limit) : this.object
+            }
+        },
         props: {
             tasks: Array
         },

@@ -1,7 +1,5 @@
 <template>
     <footer>
-        <p>Copyright &copy; 2021</p>
-        <router-link to = "/about">About</router-link>
     </footer>
 </template>
 
@@ -11,7 +9,13 @@
     }
 
     footer {
-        margin-top: 30px;
-        text-align: center;
+        background-color:  rgb(64,67,69);
+        position: absolute;
+        left: 0px;
+        top: 1080px;
+        width: 1920px;
+        height: 30%;
+        z-index: -1;
+        overflow: hidden;
     }
 </style>

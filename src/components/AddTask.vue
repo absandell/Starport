@@ -6,6 +6,10 @@
             <input type="text" v-model="text" name="text" placeholder="Add Task" />
         </div>
         <div class="form-control">
+            <label>Description</label>
+            <input type="text" v-model="description" name="description" placeholder="Add Description" />
+        </div>
+        <div class="form-control">
             <label>Day & Time</label>
             <input type="text" v-model="day" name="day" placeholder="Add Day & Time" />
         </div>
@@ -24,7 +28,8 @@
         data(){
             return {
                 text: '',
-                day: '',
+                description: '',
+                date: '',
                 reminder: false,
             }
         },
@@ -39,6 +44,7 @@
 
                 const newTask = {
                     text: this.text,
+                    description: this.description,
                     day: this.day,
                     reminder: this.reminder,
                 }
@@ -46,6 +52,7 @@
                 this.$emit('add-task', newTask)
 
                 this.text = ''
+                this.description = ''
                 this.day = ''
                 this.reminder = false
             }

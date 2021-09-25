@@ -1,4 +1,5 @@
 <template>
+<div class = "container">
   <div class = "page">
     <div class = "star-page"/>
     <div class = "star-port"/>
@@ -8,19 +9,23 @@
                 :showAddTask = "showAddTask"
               />
         <router-view :showAddTask="showAddTask"></router-view>
+      <Footer/>
 
     </div>
   </div>
+</div>
 
 </template>
 
 <script>
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
     Header,
+    Footer,
   },
   mounted(){
     this.showPopUp = false
@@ -45,11 +50,17 @@ export default {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  
 }
-body {
-  height:1080px;
-  width:1920px;
+.page {
+  height: 100%;
+  width: auto;
   font-family: 'Poppins', sans-serif;
+  overflow-y: hidden;
+}
+
+.container{
+  overflow-y: hidden;
 }
 .star-page {
   left: 0px;
@@ -72,15 +83,13 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
+  
 }
 #app{
   z-index: 5;
   position: absolute;
-}
-
-.Youtube{
-  position:absolute;
-  z-index: 99;
+  max-height: 1080px;
+  
 }
 
 .taskbar {
