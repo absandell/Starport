@@ -1,19 +1,21 @@
 <template>
-<form @submit="onSubmit" class="add-form">
-    <div class="form-control">
-        <label>Task</label>
-        <input type="text" v-model="text" name="text" placeholder="Add Task" />
-    </div>
-    <div class="form-control">
-        <label>Day & Time</label>
-        <input type="text" v-model="day" name="day" placeholder="Add Day & Time" />
-    </div>
-    <div class="form-control form-control-check">
-        <label>Set Reminder</label>
-        <input type="checkbox" v-model="reminder" name="reminder" />
-    </div>
-    <input type="submit" value="Save Task" class="btn btn-block" />
-</form>
+<div class = "formBox">
+    <form @submit="onSubmit" class="add-form">
+        <div class="form-control">
+            <label>Task</label>
+            <input type="text" v-model="text" name="text" placeholder="Add Task" />
+        </div>
+        <div class="form-control">
+            <label>Day & Time</label>
+            <input type="text" v-model="day" name="day" placeholder="Add Day & Time" />
+        </div>
+        <div class="form-control form-control-check">
+            <label>Set Reminder</label>
+            <input type="checkbox" v-model="reminder" name="reminder" />
+        </div>
+        <input type="submit" value="Save Task" class="btn btn-block" />
+    </form>
+</div>
 </template>
 
 <script>
@@ -52,10 +54,17 @@
 </script>
 
 <style scoped>
+    .formBox{
+        top: 5%;
+        left: 1%;
+        position: absolute;
+        padding: 10px;
+        background-color:rgb(0,162,232);;
+        border-radius: 10px;
+        
+    }
     .add-form {
-        width: 600px;
-
-        margin-bottom: 40px;
+        width: 550px;
         background-color: rgb(165, 192, 222);
         border-color: rgb(0,162,232);
         padding: 10px;

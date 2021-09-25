@@ -46,7 +46,7 @@ export default {
   padding: 0px;
   box-sizing: border-box;
 }
-body, html{
+body {
   height:1080px;
   width:1920px;
   font-family: 'Poppins', sans-serif;
@@ -76,6 +76,11 @@ body, html{
 #app{
   z-index: 5;
   position: absolute;
+}
+
+.Youtube{
+  position:absolute;
+  z-index: 99;
 }
 
 .taskbar {
