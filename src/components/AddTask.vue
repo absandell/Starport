@@ -53,10 +53,16 @@
 
 <style scoped>
     .add-form {
+        width: 600px;
+
         margin-bottom: 40px;
+        background-color: rgb(165, 192, 222);
+        border-color: rgb(0,162,232);
+        padding: 10px;
     }
     .form-control {
         margin: 20px 0;
+
     }
     .form-control label {
         display: block;

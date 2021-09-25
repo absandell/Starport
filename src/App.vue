@@ -1,34 +1,39 @@
 <template>
-  <div class = "modal">
-    <Header 
-      @toggle-add-task="toggleAddTask" 
-      title = "Task Tracker" 
-      :showAddTask = "showAddTask"
-    />
-    <router-view :showAddTask="showAddTask"></router-view>
-    <Footer />
+  <div class = "page">
+    <div class = "star-page"/>
+    <div class = "star-port"/>
+    <div id = app>
+      <Header 
+                @toggle-add-task="toggleAddTask" 
+                :showAddTask = "showAddTask"
+              />
+        <router-view :showAddTask="showAddTask"></router-view>
+
+    </div>
   </div>
+
 </template>
 
 <script>
 import Header from './components/Header'
-import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer,
+  },
+  mounted(){
+    this.showPopUp = false
   },
   data() {
     return {
-      showAddTask: false
+      showAddTask: false,
     }
   },
   methods:{
     toggleAddTask(){
       this.showAddTask = !this.showAddTask
-    }
+    },
   }
 }
 </script>
@@ -37,21 +42,44 @@ export default {
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 * {
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
-body {
+body, html{
+  height:1080px;
+  width:1920px;
   font-family: 'Poppins', sans-serif;
 }
-.container {
-  max-width: 500px;
-  margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
-  border: 1px solid steelblue;
-  padding: 30px;
-  border-radius: 5px;
+.star-page {
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 1080px;
+  width: 1920px;
+  background-image: url("./assets/stars-space.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+.star-port{
+  z-index: 1;
+  height: 1080px;
+  width: 1920px;
+  background-image:url('./assets/Transparent Viewport.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+#app{
+  z-index: 5;
+  position: absolute;
+}
+
+.taskbar {
+  position: relative;
 }
 .btn {
   display: inline-block;

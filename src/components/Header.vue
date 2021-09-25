@@ -1,8 +1,8 @@
 <template>
     <header>
-        <h1>{{ title }}</h1>
-        <Button v-show="homePage" @btn-click="$emit('toggle-add-task')" :text="showAddTask ? 'Close' : 'Add Task'" :color="showAddTask ? 'red' : 'green'"> </Button>
-        <Button text = "Update Task" color = "red"> </Button>
+        <div class = "center">
+            <Button class = "myButton" v-show="homePage" @btn-click="$emit('toggle-add-task')" :text="showAddTask ? 'Close' : 'Add Task'" :color="showAddTask ? 'red' : 'green'"> </Button>
+        </div>    
     </header>
 </template>
 
@@ -14,7 +14,7 @@ import Button from './Button.vue'
         props: {
             title: {
                 type: String,
-                default: 'Hello World Default',
+                default: '',
             },
             showAddTask: Boolean,
         },
@@ -35,9 +35,15 @@ import Button from './Button.vue'
 
 <style scoped>
     header {
-        display: flex;
+        width: 600px;
+        position: relative;
         justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
+    }
+    .myButton{
+        width: 190px;
+    }
+    .center{
+        padding-top: 46px;
+        padding-left: 850px;
     }
 </style>
