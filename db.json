@@ -1,11 +1,25 @@
 {
   "tasks": [
     {
-      "text": "Numerical",
-      "description": "2.1, 2.2, 2.3",
-      "day": "2021-10-01T11:35",
+      "text": "Math Homework",
+      "description": "Chapters 1.4 - 2.3",
+      "day": "2021-09-29T01:02",
       "reminder": true,
       "id": 1
+    },
+    {
+      "text": "Haircut",
+      "description": "At the usual",
+      "day": "2021-09-27T15:04",
+      "reminder": false,
+      "id": 2
+    },
+    {
+      "text": "Operating Systems Exam!!",
+      "description": "REVIEW ALL THE THINGS (??)",
+      "day": "2021-09-30T20:30",
+      "reminder": true,
+      "id": 3
     }
   ]
 }

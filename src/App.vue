@@ -129,9 +129,10 @@ export default {
 .clock{
   position: absolute;
   background-color: rgb(144,150,155);
-  width: 350px;
-  top: 500px;
-  left: 1550px;
+  margin-top: 10px;
+  width: 450px;
+  top: 1000px;
+  left: 740px;
   z-index: 70;
   height: 100px;
   font-size: 30px;
