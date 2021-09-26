@@ -69,7 +69,7 @@
 <style scoped>
     .formBox{
         top: 25%;
-        left: 105%;
+        left: 1275px;
         position: absolute;
         padding: 10px;
         background-color:rgb(0,162,232);

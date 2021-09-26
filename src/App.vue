@@ -7,7 +7,8 @@
     <button class = "music" @click="playSound(require('./assets/space.mp3'))">Launch Mission</button>
     <div @click="toggleSound()" class="toggle-sound"></div>
   </div>
-
+  <div class = "clock">{{countdown + " Seconds Until Next Break" || "Countdown Over"}}<div/>
+</div>
     <div id = app>
       <Header 
                 @toggle-add-task="toggleAddTask" 
@@ -25,6 +26,8 @@
 <script>
 import Header from './components/Header'
 import Footer from './components/Footer'
+import * as moment from "moment";
+import "moment-duration-format";
 
 export default {
   name: 'App',
@@ -34,10 +37,22 @@ export default {
   },
   data() {
     return {
+      countdown: 3000,
       showAddTask: false,
+      spaceGifs: ['wormhole.gif', 'stars-space.gif', 'starfield-space.gif'],
+      chosenGif: '',
     }
   },
   methods:{
+    randomGif(){
+      console.log(this.spaceGifs)
+      var number = Math.floor(Math.random() * this.spaceGifs.length)
+      this.chosenGif = `url("./assets/${
+        this.spaceGifs[number]
+      }")`;
+      console.log(this.chosenGif)
+      return this.chosenGif
+    },
     toggleAddTask(){
       var openAudio = new Audio(require('./assets/bleep.wav'))
       openAudio.play()
@@ -45,14 +60,26 @@ export default {
     },
     playSound(sound){
       if(sound){
-        var audio = new Audio(sound);
-        audio.play();
+        var audio = new Audio(sound)
+        audio.play()
       }
     }
   },
-  mounted: function(){
-    var audio = new Audio('./assets/space.mp3');
-    audio.play();
+  mounted(){
+    const stopCountdown = setInterval(() => {
+      console.log("current countdown", this.countdown);
+      this.countdown -= 1;
+      if (this.countdown == 0){
+        clearInterval(stopCountdown);
+        playSound('./assets/sweep.mav')
+      }
+      
+    }, 1000);
+  },
+  computed : {
+      formatedCountdown() {
+      return moment.duration(this.countdown, "seconds").format("m:ss");
+    },
   }
 }
 </script>
@@ -82,7 +109,7 @@ export default {
   z-index: -1;
   height: 1080px;
   width: 1920px;
-  background-image: url("./assets/stars-space.gif");
+  background-image:url('./assets/starfield-space.gif');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,6 +125,20 @@ export default {
   background-size: cover;
   position: absolute;
   
+}
+.clock{
+  position: absolute;
+  background-color: rgb(144,150,155);
+  width: 350px;
+  top: 500px;
+  left: 1550px;
+  z-index: 70;
+  height: 100px;
+  font-size: 30px;
+  border-radius: 5%;
+  text-align: center;
+  border: black;
+  font-weight: 600;
 }
 .music{
   height: 200px;

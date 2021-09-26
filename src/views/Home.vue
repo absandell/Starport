@@ -12,7 +12,6 @@
 <script>
 import Tasks from '../components/Tasks'
 import AddTask from '../components/AddTask'
-import Clock from '../components/Clock'
 export default {
     name: 'Home',
     props: {
@@ -21,7 +20,6 @@ export default {
     components: {
         Tasks,
         AddTask,
-        Clock,
     },
     data () {
         return {
