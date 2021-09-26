@@ -38,7 +38,7 @@
                 e.preventDefault()
 
                 if(!this.text){
-                    var errorAudio = new Audio(require('../assets/sweep.wav'))
+                    var errorAudio = new Audio(require('../assets/zoom.wav'))
                     errorAudio.play()
                     alert('Please Enter a Task')
                     return
