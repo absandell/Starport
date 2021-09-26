@@ -10,8 +10,8 @@
             <input type="text" v-model="description" name="description" placeholder="Add Description" />
         </div>
         <div class="form-control">
-            <label>Day & Time</label>
-            <input type="text" v-model="day" name="day" placeholder="Add Day & Time" />
+            <label>Time Due</label>
+            <input type="datetime-local" v-model="day" name="day" placeholder="Enter Time" />
         </div>
         <div class="form-control form-control-check">
             <label>Set Reminder</label>
@@ -38,7 +38,9 @@
                 e.preventDefault()
 
                 if(!this.text){
-                    alert('Please add a task')
+                    var errorAudio = new Audio(require('../assets/sweep.wav'))
+                    errorAudio.play()
+                    alert('Please Enter a Task')
                     return
                 }
 
@@ -50,6 +52,10 @@
                 }
 
                 this.$emit('add-task', newTask)
+                
+                console.log("here")
+                var submitAudio = new Audio(require('../assets/OS.wav'))
+                submitAudio.play()
 
                 this.text = ''
                 this.description = ''
@@ -62,11 +68,11 @@
 
 <style scoped>
     .formBox{
-        top: 5%;
-        left: 1%;
+        top: 25%;
+        left: 105%;
         position: absolute;
         padding: 10px;
-        background-color:rgb(0,162,232);;
+        background-color:rgb(0,162,232);
         border-radius: 10px;
         
     }
@@ -77,7 +83,7 @@
         padding: 10px;
     }
     .form-control {
-        margin: 20px 0;
+        margin: 20px 20px;
 
     }
     .form-control label {

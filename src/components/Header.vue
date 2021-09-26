@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class = "center">
-            <Button class = "myButton" v-show="homePage" @btn-click="$emit('toggle-add-task')" :text="showAddTask ? 'Close' : 'Add Task'" :color="showAddTask ? 'red' : 'green'"> </Button>
+            <Button class = "myButton" v-show="homePage" @btn-click="$emit('toggle-add-task')" :text="showAddTask ? 'Close' : 'Add Task'" :color="showAddTask ? 'red' : 'blue'"> </Button>
         </div>    
     </header>
 </template>

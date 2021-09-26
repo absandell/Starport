@@ -1,50 +1,11 @@
 {
   "tasks": [
     {
-      "text": "Test tas",
-      "description": "test",
-      "day": "ttt",
-      "reminder": false,
-      "id": "rotTNG9"
-    },
-    {
-      "text": "My Task",
-      "description": "1.3, 1.5, 1.8",
-      "day": "Today, 5:00pm",
+      "text": "hi",
+      "description": "",
+      "day": "2021-09-25T19:06",
       "reminder": true,
-      "id": "ZILMn8i"
-    },
-    {
-      "text": "New",
-      "description": "",
-      "reminder": false,
-      "id": "f46AYVH"
-    },
-    {
-      "text": "new",
-      "description": "",
-      "day": "",
-      "reminder": false,
-      "id": "lRSexey"
-    },
-    {
-      "text": "test",
-      "description": "",
-      "day": "",
-      "reminder": false,
-      "id": "9QPn8_y"
-    },
-    {
-      "text": "t",
-      "description": "",
-      "reminder": false,
-      "id": "RwLFrA6"
-    },
-    {
-      "text": "f",
-      "description": "",
-      "reminder": false,
-      "id": "YMaVLq8"
+      "id": "r6KSpxx"
     }
   ]
 }

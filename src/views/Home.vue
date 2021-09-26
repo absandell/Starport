@@ -12,6 +12,7 @@
 <script>
 import Tasks from '../components/Tasks'
 import AddTask from '../components/AddTask'
+import Clock from '../components/Clock'
 export default {
     name: 'Home',
     props: {
@@ -20,6 +21,7 @@ export default {
     components: {
         Tasks,
         AddTask,
+        Clock,
     },
     data () {
         return {
@@ -44,7 +46,10 @@ export default {
             this.tasks = [...this.tasks, data]
         },
         async deleteTask(id){
-            if(confirm("Are you sure?")){
+            if(confirm("Are you ready to delete this item?")){
+                var deleteAudio = new Audio(require('../assets/confirm.wav'))
+                deleteAudio.play()
+
             const res = await fetch(`api/tasks/${id}`,{
                 method: 'DELETE'
             })
